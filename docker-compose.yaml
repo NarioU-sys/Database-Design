@@ -1,0 +1,68 @@
+version: '3.6'
+
+networks:
+  postgres_pg:
+
+services:
+  postgres:
+    image: postgres:13
+    hostname: postgres
+    container_name: my_postgres_db
+  
+    env_file:
+      - .env
+
+    
+    # Docker- mounted volume
+    volumes:
+      - postgres_data:/var/lib/postgresql/postgres_data
+
+    ports:
+      - "5432:5432"
+
+    healthcheck:
+      test: ["CMD-SHELL", "sh -c 'pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB}' "]
+      interval: 10s
+      timeout: 30s
+      retries: 5
+      start_period: 30s
+
+    
+    restart: unless-stopped 
+
+    networks:
+      - postgres_pg
+  
+  pgadmin:
+    image: dpage/pgadmin4
+    hostname: pgadmin
+    container_name: my_ui_pgadmin1
+    env_file:
+      - .env
+    ports:
+      - "8080:80"
+
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost"]
+      interval: 1m30s
+      timeout: 30s
+      retries: 5
+      start_period: 30s
+
+    restart: unless-stopped 
+
+    depends_on:
+      postgres:
+        condition: service_healthy
+    
+
+    networks:
+      - postgres_pg
+
+volumes:
+  postgres_data:
+
+
+
+    
+
