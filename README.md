@@ -108,34 +108,42 @@ doker-compose up -d
 ```
 ## Repository Structure
 
-├── .vscode/
-│   └── settings.json                  # Settings for SQL client
+# E-Library Database Project
+
+## Directory Structure
+```
+├── .vscode/                          # VS Code configuration
+│   └── settings.json                 # Settings for SQL client
 │
-├── assets/
-│   ├── banner.png                     # Project banner
-│   └── elab.png                       # Conceptual database diagram
+├── assets/                           # Project media assets
+│   ├── banner.png                    # Project banner
+│   └── elab.png                      # Conceptual database diagram
 │
-├── elab/
-│   ├── elab.sql                       # Main script to create the database
-│   ├── admin_table.sql               # Administration table
-│   ├── books_table.sql               # Books, titles, authors
-│   ├── collection_table.sql          # Genres and shelf info
-│   ├── customer_table.sql            # Customer details
-│   ├── date_table.sql                # Event dates (registration, purchase, etc.)
-│   ├── interaction_table.sql         # Chats, messages, tech support
-│   ├── library_table.sql             # Library info
-│   ├── loan_table.sql                # Item loaning data
-│   ├── location_table.sql            # Location details
-│   ├── purchase_table.sql            # Purchase records (books, journals, etc.)
-│   ├── registration_table.sql        # Registration data
-│   └── shelf_table.sql               # Book classification
+├── elab/                             # Database scripts
+│   ├── schema/                       # Database schema definitions
+│   │   ├── admin_table.sql           # Administration table
+│   │   ├── books_table.sql           # Books, titles, authors
+│   │   ├── collection_table.sql      # Genres and shelf info
+│   │   ├── customer_table.sql        # Customer details
+│   │   ├── date_table.sql            # Event dates
+│   │   ├── interaction_table.sql     # Chats, messages, tech support
+│   │   ├── library_table.sql         # Library info
+│   │   ├── loan_table.sql            # Item loaning data
+│   │   ├── location_table.sql        # Location details
+│   │   ├── purchase_table.sql        # Purchase records
+│   │   ├── registration_table.sql    # Registration data
+│   │   └── shelf_table.sql           # Book classification
+│   │
+│   └── elab.sql                      # Main script to create the database
+│
+├── scripts/                          # Utility scripts
+│   └── main.py                       # Script to insert data into the database
 │
 ├── .gitignore                        # Files/folders to ignore in git
-├── Docker-compose.yaml              # Infrastructure as Code: services, DB setup
+├── docker-compose.yaml               # Infrastructure as Code: services, DB setup
 ├── LICENSE                           # License file
-├── main.py                           # Script to insert data into the database
 └── README.md                         # Project overview and documentation
-
+```
 ## Contribution
 
 Pull requests are welcome! For major changes, please open an issue first to discuss what you would like to change or contribute.
