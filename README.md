@@ -107,43 +107,34 @@ Start server locally
 doker-compose up -d
 ```
 ## Repository Structure
-├── .vscode
-│        ├── setting.json          <- Setting for sql client>
+
+├── .vscode/
+│   └── settings.json                  # Settings for SQL client
 │
-├── assets
-│   ├── banner.png                 <- Banner.
-│   ├── Elab.png                   <- Conceptual diagram of the Database.
-│                    
+├── assets/
+│   ├── banner.png                     # Project banner
+│   └── elab.png                       # Conceptual database diagram
 │
+├── elab/
+│   ├── elab.sql                       # Main script to create the database
+│   ├── admin_table.sql               # Administration table
+│   ├── books_table.sql               # Books, titles, authors
+│   ├── collection_table.sql          # Genres and shelf info
+│   ├── customer_table.sql            # Customer details
+│   ├── date_table.sql                # Event dates (registration, purchase, etc.)
+│   ├── interaction_table.sql         # Chats, messages, tech support
+│   ├── library_table.sql             # Library info
+│   ├── loan_table.sql                # Item loaning data
+│   ├── location_table.sql            # Location details
+│   ├── purchase_table.sql            # Purchase records (books, journals, etc.)
+│   ├── registration_table.sql        # Registration data
+│   └── shelf_table.sql               # Book classification
 │
-├── elab
-│   ├── admin_table.sql           <- Administration table.
-│   ├── books_table.sql           <- books,titles, authors.
-│   ├── collection_table.sql      <- genres shelf information.
-│   ├── customer_table.sql        <- customer details
-│   ├── date_tabel.sql            <- date for events around the system ranging from registration to purchase.
-│   ├── elab.sql                  <- create DB
-│   ├── interaction_table.sql     <- chats, messages, tech support
-│   ├── library_table.sql         <- library Info
-│   ├── loan_table.sql            <- item loaning info
-│   ├── location_table.sql        <- location details
-│   ├── purchase_table.sql        <- details of purchase of booking, journal etc
-│   ├── registration_table.sql    <- details about registration
-│   ├── shelf_table.sql           <- classification of books>
-│
-├── .gitignore                      <- used to ignore certain folder and files that won't be commit to git.
-│
-│
-├── Docker-compose.yaml    <- Holds and runs the Iac and architecture of the system.
-│
-│
-├── LICENSE                         <- license file.
-│
-│
-├── main.py                         <-To run the that insert data to the DataBase.
-│
-│
-├── README.md                       <- Explain the projects and components.
+├── .gitignore                        # Files/folders to ignore in git
+├── Docker-compose.yaml              # Infrastructure as Code: services, DB setup
+├── LICENSE                           # License file
+├── main.py                           # Script to insert data into the database
+└── README.md                         # Project overview and documentation
 
 ## Contribution
 
