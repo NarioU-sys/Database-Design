@@ -108,9 +108,6 @@ doker-compose up -d
 ```
 ## Repository Structure
 
-# E-Library Database Project
-
-## Directory Structure
 ```
 ├── .vscode/                          # VS Code configuration
 │   └── settings.json                 # Settings for SQL client
