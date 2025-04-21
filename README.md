@@ -39,7 +39,7 @@ which has records of users and managements alike.
 - Sharding
 
 ## Conceptual Design
-![Alt text](assets\Elab.jpg)
+![Alt text](assets/Elab.jpg)
 
 ## Tech Stack
 - PostgreSql
