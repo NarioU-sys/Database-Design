@@ -1,7 +1,7 @@
 # Database-Design
 This project aims to design and implement a robust relational database for a Library Management System (LMS) Called ELAB. The system will efficiently manage books, users, transactions, anddministrative tasks while ensuring data integrity, security, and scalability💻👨‍💻😊
 
-![Alt text](assets\banner.png)
+![Alt text](assets/banner.png)
 ![Static Badge](https://img.shields.io/badge/Python_version-3.10%2B-cyan) 
 ![Static Badge](https://img.shields.io/badge/Database_strategy-Indexing_Sharding_Materialized%20view-yellow)
 ![Static Badge](https://img.shields.io/badge/Docker-violet) 
